@@ -6,6 +6,8 @@
 - 测试文件建议与被测模块同名，如 test_xxx.cpp。
 - 可在 CMakeLists.txt 中统一添加所有测试。
 
+⚠️ 注意：如无任何测试源码，CMakeLists.txt 不应添加 add_executable，否则 CMake 会报错。建议参考注释，按需启用测试目标。
+
 ---
 
 你可以在此目录下添加自己的测试代码，保障项目质量。

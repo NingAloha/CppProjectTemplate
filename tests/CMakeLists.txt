@@ -9,19 +9,13 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-# Test executable
-add_executable(CppProjectTemplateTests)
-
-target_link_libraries(CppProjectTemplateTests
-
-    gtest
-    gtest_main
-)
-
-target_include_directories(CppProjectTemplateTests PRIVATE
-    ${PROJECT_SOURCE_DIR}/include
-)
-
-# Discover tests
-include(GoogleTest)
-gtest_discover_tests(CppProjectTemplateTests)
+# 只有有测试源码时才添加测试目标
+# 示例：
+# set(TEST_SOURCES test_xxx.cpp)
+# if(TEST_SOURCES)
+#     add_executable(CppProjectTemplateTests ${TEST_SOURCES})
+#     target_link_libraries(CppProjectTemplateTests gtest gtest_main)
+#     target_include_directories(CppProjectTemplateTests PRIVATE ${PROJECT_SOURCE_DIR}/include)
+#     include(GoogleTest)
+#     gtest_discover_tests(CppProjectTemplateTests)
+# endif()
