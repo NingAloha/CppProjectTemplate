@@ -1,33 +1,91 @@
-# C++ build artifacts
+# Build directories
+build/
+cmake-build-*/
+out/
+bin/
+lib/
+
+# Visual Studio
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ncb
+*.sdf
+*.opensdf
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Compiled Object files
+*.slo
+*.lo
 *.o
 *.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
 *.so
+*.dylib
 *.dll
-*.exe
-*.out
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
 *.a
 *.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Linker files
 *.exp
 *.pdb
 *.ilk
 *.idb
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+Makefile
+
+# Testing
+Testing/
 *.log
 
-# CMake build artifacts
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-build/
-
-# IDE-specific files
+# IDEs
 .idea/
-.vscode/
-*.code-workspace
-*.sln
-*.vcxproj*
-*.ncb
-*.sdf
-*.opensdf
-*.vcxproj.filters
-*.vcxproj.user
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Coverage
+*.gcov
+*.gcda
+*.gcno
+coverage/

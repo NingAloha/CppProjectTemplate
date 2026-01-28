@@ -1,44 +1,146 @@
 # C++ 项目模板
 
-这是一个通用的 C++ 项目模板，旨在快速设置和扩展。它包括结构化的文件夹布局、CMake 构建系统、示例代码和文档。
+[![CMake Build and Test](https://github.com/NingAloha/CppProjectTemplate/actions/workflows/cmake.yml/badge.svg)](https://github.com/NingAloha/CppProjectTemplate/actions/workflows/cmake.yml)
 
-## 特性
-- 组织良好的文件夹结构
-- CMake 构建系统
-- 示例代码
-- 单元测试设置
-- 文档和许可
+这是一个现代化的 C++ 项目模板，提供完整的项目结构、构建系统和测试框架，帮助您快速启动新的 C++ 项目。
 
-## 文件夹结构
+## ✨ 特性
+
+- 🏗️ **现代 CMake** - 使用 CMake 3.15+ 构建系统
+- 📦 **模块化结构** - 清晰的代码组织（include/src/tests）
+- ✅ **单元测试** - 集成 Google Test 测试框架
+- 🔄 **CI/CD** - GitHub Actions 自动化构建和测试
+- 🎨 **代码格式化** - clang-format 和 clang-tidy 配置
+- 📝 **完整文档** - 详细的使用说明和示例代码
+- 🔧 **跨平台** - 支持 Windows、Linux 和 macOS
+
+## 📁 项目结构
+
 ```
 CppProjectTemplate/
-├── cmake/          # CMake 模块
-├── docs/           # 文档
-├── include/        # 头文件
-├── src/            # 源代码
-├── tests/          # 单元测试
-├── .github/        # GitHub 专用文件
-├── .gitignore      # Git 忽略规则
-├── CMakeLists.txt  # CMake 构建配置
-├── LICENSE         # 许可文件
-└── README.md       # 项目概述
+├── .github/
+│   └── workflows/      # GitHub Actions CI/CD 配置
+├── cmake/              # 自定义 CMake 模块
+├── docs/               # 项目文档
+├── include/            # 公共头文件
+│   └── calculator.h
+├── src/                # 源代码
+│   ├── CMakeLists.txt
+│   ├── calculator.cpp
+│   └── main.cpp
+├── tests/              # 单元测试
+│   ├── CMakeLists.txt
+│   └── calculator_test.cpp
+├── .clang-format       # 代码格式化配置
+├── .clang-tidy         # 静态分析配置
+├── .gitignore          # Git 忽略规则
+├── CMakeLists.txt      # 主 CMake 配置
+├── LICENSE             # 许可证文件
+└── README.md           # 项目说明
 ```
 
-## 构建说明
-1. 安装 C++ 编译器和 CMake。
-2. 克隆此仓库：
+## 🚀 快速开始
+
+### 前置要求
+
+- C++17 兼容的编译器（MSVC、GCC、Clang）
+- CMake 3.15 或更高版本
+- Git
+
+### 构建步骤
+
+1. **克隆仓库**
    ```bash
-   git clone https://github.com/your-username/CppProjectTemplate.git
-   ```
-3. 创建构建目录并配置项目：
-   ```bash
-   mkdir build && cd build
-   cmake ..
-   ```
-4. 构建项目：
-   ```bash
-   cmake --build .
+   git clone https://github.com/NingAloha/CppProjectTemplate.git
+   cd CppProjectTemplate
    ```
 
-## 许可
-此项目基于 MIT 许可。详情请参阅 [LICENSE](LICENSE) 文件。
+2. **配置和构建**
+   ```bash
+   # 创建构建目录
+   mkdir build && cd build
+   
+   # 配置项目
+   cmake ..
+   
+   # 构建项目
+   cmake --build . --config Release
+   ```
+
+3. **运行程序**
+   ```bash
+   # Windows
+   .\bin\Release\CppProjectTemplate.exe
+   
+   # Linux/macOS
+   ./bin/CppProjectTemplate
+   ```
+
+4. **运行测试**
+   ```bash
+   ctest -C Release --output-on-failure
+   ```
+
+## 🧪 测试
+
+项目使用 Google Test 框架进行单元测试。测试文件位于 `tests/` 目录。
+
+```bash
+# 构建并运行所有测试
+cd build
+cmake --build . --config Release
+ctest -C Release --verbose
+```
+
+## 🛠️ 开发指南
+
+### 添加新的源文件
+
+1. 在 `include/` 中创建头文件
+2. 在 `src/` 中创建对应的源文件
+3. 更新 `src/CMakeLists.txt` 中的源文件列表
+4. 在 `tests/` 中添加相应的测试文件
+
+### 代码格式化
+
+项目包含 `.clang-format` 配置文件，可以使用以下命令格式化代码：
+
+```bash
+clang-format -i src/*.cpp include/*.h
+```
+
+### 静态分析
+
+使用 clang-tidy 进行静态代码分析：
+
+```bash
+clang-tidy src/*.cpp -- -I./include
+```
+
+## 📊 持续集成
+
+项目配置了 GitHub Actions，会在以下情况下自动运行：
+- Push 到 main 或 develop 分支
+- 创建 Pull Request
+
+CI 流程包括：
+- 多平台构建（Windows、Linux、macOS）
+- 运行所有单元测试
+- 生成构建产物
+
+## 📄 许可证
+
+本项目采用 MIT 许可证。详情请参阅 [LICENSE](LICENSE) 文件。
+
+## 🤝 贡献
+
+欢迎贡献！请随时提交 Issue 或 Pull Request。
+
+## 📧 联系方式
+
+- 作者：NingAloha
+- 仓库：[https://github.com/NingAloha/CppProjectTemplate](https://github.com/NingAloha/CppProjectTemplate)
+
+---
+
+如有任何问题或建议，请创建 Issue！
