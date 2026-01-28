@@ -1,0 +1,33 @@
+# C++ build artifacts
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.out
+*.a
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.idb
+*.log
+
+# CMake build artifacts
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build/
+
+# IDE-specific files
+.idea/
+.vscode/
+*.code-workspace
+*.sln
+*.vcxproj*
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj.filters
+*.vcxproj.user
