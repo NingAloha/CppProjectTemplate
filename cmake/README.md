@@ -1,20 +1,11 @@
-# 自定义 CMake 模块
+# cmake 目录使用指南
 
-本目录用于存放自定义的 CMake 模块和辅助脚本。
+本目录用于存放自定义 CMake 脚本和模块。
 
-## 使用方法
+- 可放置 FindXXX.cmake、工具函数等辅助脚本。
+- 在主 CMakeLists.txt 通过 include(cmake/xxx.cmake) 引用。
+- 便于项目构建流程的扩展和复用。
 
-在主 CMakeLists.txt 中添加：
+---
 
-```cmake
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-```
-
-然后可以使用 `include()` 导入自定义模块。
-
-## 常用模块示例
-
-- 代码覆盖率配置
-- 静态分析工具集成
-- 第三方库查找脚本
-- 打包和安装配置
+你可以在此目录下添加自己的 CMake 脚本，提升构建系统灵活性。
