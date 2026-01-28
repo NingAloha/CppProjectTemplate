@@ -1,5 +1,34 @@
 # C++ 项目模板
 
+## 🆕 如何用本模板初始化新项目
+
+你可以将本仓库作为新 C++ 项目的起点，快速搭建属于自己的工程。推荐流程如下：
+
+### 方式一：GitHub 上直接使用
+
+1. 打开本项目仓库主页，点击 `Use this template` 按钮。
+2. 填写你的新仓库名称，点击 `Create repository from template`。
+3. 克隆你自己的新仓库到本地，开始开发。
+
+### 方式二：手动克隆并重命名
+
+1. 克隆本仓库到本地：
+   ```bash
+   git clone https://github.com/NingAloha/CppProjectTemplate.git MyNewProject
+   cd MyNewProject
+   ```
+2. 删除原有的 git 记录，初始化新仓库：
+   ```bash
+   rm -rf .git
+   git init
+   git add .
+   git commit -m "init: project from template"
+   ```
+3. 修改 `README.md`、`LICENSE`、`CMakeLists.txt` 等文件中的项目信息为你的新项目名。
+4. 按需调整 include/src/tests 目录内容，开始你的开发。
+
+---
+
 [![CMake Build and Test](https://github.com/NingAloha/CppProjectTemplate/actions/workflows/cmake.yml/badge.svg)](https://github.com/NingAloha/CppProjectTemplate/actions/workflows/cmake.yml)
 
 这是一个现代化的 C++ 项目模板，提供完整的项目结构、构建系统和测试框架，帮助您快速启动新的 C++ 项目。
