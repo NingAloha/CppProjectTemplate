@@ -10,9 +10,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # Test executable
-add_executable(CppProjectTemplateTests
-    calculator_test.cpp
-)
+add_executable(CppProjectTemplateTests)
 
 target_link_libraries(CppProjectTemplateTests
 
