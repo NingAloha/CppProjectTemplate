@@ -15,7 +15,7 @@ add_executable(CppProjectTemplateTests
 )
 
 target_link_libraries(CppProjectTemplateTests
-    calculator_lib
+
     gtest
     gtest_main
 )
